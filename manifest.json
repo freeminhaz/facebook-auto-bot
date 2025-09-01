@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Facebook Auto Bot",
+  "version": "1.0",
+  "description": "Auto friend request bot for Facebook",
+  "permissions": ["scripting", "tabs", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.facebook.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
